@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>情報源まとめページ（職員向け資料）— 堀大輔氏の睡眠事業に関する出典・窓口・証拠評価</title>
+    <style>
+      :root{
+        --bg:#f4f4f1; --paper:#ffffff; --ink:#1c1f24; --ink-2:#454b54; --ink-3:#6b7280;
+        --line:#d9d9d2; --line-2:#e7e7e0;
+        --navy:#1f3350; --navy-ink:#ffffff;
+        --a-bg:#8f1d22; --a-soft:#f9ecec;
+        --b-bg:#8a5a12; --b-soft:#faf3e3;
+        --c-bg:#5b6470; --c-soft:#eef0f2;
+        --ok:#1e6b4f; --ok-soft:#e9f4ee;
+        --warn:#8f1d22;
+        --link:#1d4f91;
+        --chip:#eceee9;
+        --code-bg:#f1f1ec;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#14161a; --paper:#1d2026; --ink:#e8eaee; --ink-2:#b9bec8; --ink-3:#8b919c;
+          --line:#383d46; --line-2:#2c3038;
+          --navy:#9db8dd; --navy-ink:#10131a;
+          --a-bg:#e08a8e; --a-soft:#332326;
+          --b-bg:#dbb26a; --b-soft:#332b1c;
+          --c-bg:#a7aeb9; --c-soft:#262a31;
+          --ok:#7fc7a8; --ok-soft:#1e2e28;
+          --warn:#e08a8e;
+          --link:#8fb4e8;
+          --chip:#262a31;
+          --code-bg:#262a31;
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--ink);
+        font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,"Noto Sans JP",system-ui,sans-serif;
+        font-size:15.5px;line-height:1.75;-webkit-text-size-adjust:100%}
+      a{color:var(--link);text-decoration:underline;text-underline-offset:2px;word-break:break-all}
+      a:hover{opacity:.85}
+      .wrap{max-width:920px;margin:0 auto;padding:0 18px 72px}
+      /* ---------- header ---------- */
+      header.doc{border-bottom:3px double var(--ink);padding:34px 0 20px;margin-bottom:8px}
+      .doc-kicker{font-size:12.5px;letter-spacing:.14em;color:var(--ink-2);font-weight:700}
+      h1{font-size:27px;line-height:1.4;margin:8px 0 10px;font-weight:800;letter-spacing:.01em}
+      .doc-sub{color:var(--ink-2);font-size:14.5px;margin:0 0 14px}
+      .meta-table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--paper);border:1px solid var(--line)}
+      .meta-table th,.meta-table td{border:1px solid var(--line-2);padding:7px 12px;text-align:left;vertical-align:top}
+      .meta-table th{background:var(--chip);width:118px;font-weight:700;white-space:nowrap}
+      .notice{border:1px solid var(--warn);background:var(--a-soft);padding:12px 16px;margin:16px 0;font-size:14px}
+      .notice strong{color:var(--warn)}
+      /* ---------- sections ---------- */
+      h2{font-size:20px;margin:44px 0 6px;padding-bottom:6px;border-bottom:2px solid var(--ink);font-weight:800}
+      h2 .no{color:var(--ink-3);font-weight:700;margin-right:.4em}
+      h3{font-size:16.5px;margin:26px 0 6px;font-weight:800}
+      p{margin:8px 0}
+      .lead{color:var(--ink-2)}
+      ul,ol{margin:8px 0 8px 1.2em;padding:0}
+      li{margin:4px 0}
+      small{color:var(--ink-3)}
+      /* ---------- badges ---------- */
+      .badge{display:inline-block;font-size:12px;font-weight:800;line-height:1;padding:4px 9px;border-radius:3px;vertical-align:middle;white-space:nowrap}
+      .badge-a{background:var(--a-bg);color:#fff}
+      .badge-b{background:var(--b-bg);color:#fff}
+      .badge-c{background:var(--c-bg);color:#fff}
+      @media (prefers-color-scheme: dark){.badge-a,.badge-b,.badge-c{color:#10131a}}
+      .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink-2);white-space:nowrap}
+      .tag.primary{border-color:var(--navy);color:var(--navy)}
+      .tag.gone{border-color:var(--warn);color:var(--warn)}
+      /* ---------- issue cards ---------- */
+      .issue{background:var(--paper);border:1px solid var(--line);margin:20px 0;padding:0}
+      .issue-head{padding:16px 20px 10px;border-bottom:1px solid var(--line-2)}
+      .issue-head h3{margin:0 0 6px;font-size:18px}
+      .issue-head .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+      .issue-body{padding:6px 20px 18px}
+      .issue-body h4{font-size:14px;margin:18px 0 4px;font-weight:800;color:var(--navy);
+        border-left:4px solid var(--navy);padding-left:8px}
+      .verdict{padding:10px 14px;font-size:14px;margin:12px 0}
+      .verdict-a{background:var(--a-soft);border:1px solid var(--a-bg)}
+      .verdict-b{background:var(--b-soft);border:1px solid var(--b-bg)}
+      .verdict-c{background:var(--c-soft);border:1px solid var(--c-bg)}
+      .verdict strong{display:block;margin-bottom:2px}
+      blockquote{margin:10px 0;padding:10px 16px;background:var(--code-bg);border-left:3px solid var(--ink-3);
+        font-size:14.5px}
+      blockquote .ts{color:var(--ink-3);font-size:12.5px;font-weight:700}
+      /* ---------- source rows ---------- */
+      .src{border-top:1px dashed var(--line);padding:10px 0}
+      .src:first-of-type{border-top:none}
+      .src-title{font-weight:700}
+      .src-meta{font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:4px 10px;margin:2px 0}
+      .src-url{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+      .src-url a{flex:1 1 260px;min-width:0}
+      .copy-btn{flex:0 0 auto;font:inherit;font-size:12px;font-weight:700;padding:3px 10px;border:1px solid var(--line);
+        background:var(--chip);color:var(--ink);border-radius:3px;cursor:pointer}
+      .copy-btn:hover{opacity:.85}
+      .copy-btn.done{border-color:var(--ok);color:var(--ok)}
+      /* ---------- tables ---------- */
+      .tbl-wrap{overflow:visible;margin:14px 0}
+      table.data{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);font-size:13.5px}
+      table.data th,table.data td{border:1px solid var(--line-2);padding:8px 10px;text-align:left;vertical-align:top}
+      table.data thead th{background:var(--navy);color:var(--navy-ink);font-weight:700}
+      table.data tbody th{background:var(--chip);font-weight:700}
+      /* ---------- filter bar ---------- */
+      .filterbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 10px;border-bottom:1px solid var(--line)}
+      .filterbar .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+      .fbtn{font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;border:1px solid var(--line);
+        background:var(--paper);color:var(--ink);cursor:pointer}
+      .fbtn[aria-pressed="true"]{background:var(--navy);color:var(--navy-ink);border-color:var(--navy)}
+      .filterbar input[type="search"]{font:inherit;font-size:14px;padding:7px 12px;border:1px solid var(--line);
+        border-radius:3px;background:var(--paper);color:var(--ink);flex:1 1 200px;min-width:160px}
+      .count-note{font-size:12.5px;color:var(--ink-3)}
+      .issue[hidden]{display:none}
+      .toc{background:var(--paper);border:1px solid var(--line);padding:14px 20px;margin:18px 0}
+      .toc p{margin:0 0 6px;font-weight:800;font-size:14px}
+      .toc ol{margin:0 0 0 1.4em}
+      .toc li{margin:2px 0;font-size:14px}
+      footer.doc{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--ink-2)}
+      .print-btn{font:inherit;font-size:13px;font-weight:700;padding:7px 16px;border:1px solid var(--ink);
+        background:var(--paper);color:var(--ink);border-radius:3px;cursor:pointer}
+      @media (max-width:640px){
+        body{font-size:15px}
+        h1{font-size:23px}
+        .issue-head,.issue-body{padding-left:14px;padding-right:14px}
+        table.data,table.data tbody,table.data tr,table.data td,table.data th{display:block;width:100%}
+        table.data thead{display:none}
+        table.data tr{border-bottom:2px solid var(--line);padding:6px 0}
+        table.data th,table.data td{border:none;padding:4px 10px}
+        .meta-table th{width:96px;white-space:normal}
+      }
+      @media print{
+        .filterbar,.print-btn,.copy-btn{display:none!important}
+        body{background:#fff}
+        .issue{break-inside:avoid}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <header class="doc">
+        <p class="doc-kicker">職員向け参照資料 ／ 通報を受けた際に開くページ</p>
+        <h1>堀大輔氏の睡眠事業に関する<br />情報源まとめ ― 出典・窓口・証拠評価</h1>
+        <p class="doc-sub">通報・相談を受けた職員が、URLひとつで「何が起きているのか／出典は何か／どこが所管か／証拠としてどこまで使えるか」を確認できるよう、公開情報のみで整理した資料です。論点ごとに優先度を付け、一次情報が確認できるものを上位に、原資料が失われたもの・証言のみのものを下位に置いています。</p>
+        <table class="meta-table">
+          <tr><th>対象</th><td>堀大輔氏／GAHAKU株式会社（代表取締役 堀 大輔、設立2014年4月17日）／旧・一般社団法人日本ショートスリーパー育成協会（法人番号 6011005006736 ※法人情報サイトによる二次情報）</td></tr>
+          <tr><th>事業の内容</th><td>「ショートスリーパー®養成」を掲げる有料の睡眠改善プログラム（講座）の運営。現在のGAHAKU公式サイトでは「2,000名を超える受講生」への睡眠指導をうたう</td></tr>
+          <tr><th>確認日</th><td>2026年11月9日（各出典の状態はすべてこの日時点の確認）</td></tr>
+          <tr><th>読み方</th><td>優先度 <span class="badge badge-a">A</span> ＝一次情報が現存し、今すぐ照合できるもの／<span class="badge badge-b">B</span> ＝二次情報・第三者の記録が中心で、補強が必要なもの／<span class="badge badge-c">C</span> ＝証言のみで一次資料が未確認のもの（断定には使えない）</td></tr>
+        </table>
+        <div class="notice">
+          <strong>この資料の位置づけ：</strong>本資料は法令違反を断定するものではありません。各論点について「確認できる事実」「関係しうる法令」「所管窓口」「証拠としての強さと限界」を分けて記載しています。個別事案の最終判断は所管機関・専門家に委ねられます。また本資料は法律相談・法的助言ではありません。
+        </div>
+      </header>
+
+      <nav class="toc" aria-label="目次">
+        <p>目次</p>
+        <ol>
+          <li><a href="#map">早見表：論点 → 窓口・法令・優先度</a></li>
+          <li><a href="#issues">論点別資料（優先度順）</a></li>
+          <li><a href="#lost">消えた／閉じた一次資料の一覧</a></li>
+          <li><a href="#unknown">未確認事項リスト（推測で埋めていないもの）</a></li>
+          <li><a href="#windows">窓口一覧（連絡先の詳細）</a></li>
+          <li><a href="#rules">証拠保全の共通ルール</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="map"><span class="no">1</span>早見表：論点 → 窓口・法令・優先度</h2>
+      <p class="lead">まず全体像を把握するための表です。各論点の詳細は第2章にあります。</p>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th style="width:26%">論点</th><th style="width:30%">第一の窓口</th><th style="width:28%">関係法令</th><th style="width:16%">優先度</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#issue-display">受講生数・成功率等の表示</a></td><td>消費者庁（景品表示法）</td><td>景品表示法 5条・7条・8条</td><td><span class="badge badge-a">A</span></td></tr>
+            <tr><td><a href="#issue-melatonin">メラトニンの摂取推奨（公開配信で確認できる範囲）</a></td><td>都道府県 薬務主管課／厚生労働省</td><td>薬機法 66条・68条／医師法 17条</td><td><span class="badge badge-a">A</span>（範囲限定）</td></tr>
+            <tr><td><a href="#issue-medical">短眠指導への医師の否定・健康リスク</a></td><td>事業所所在地の都道府県 医務主管課・保健所</td><td>医師法 17条・31条</td><td><span class="badge badge-b">B</span></td></tr>
+            <tr><td><a href="#issue-sales">販売方法・特商法表記・解約条件</a></td><td>消費者庁（特定商取引法）／消費生活センター（188）</td><td>特商法 11条・12条・12条の2・15条の3</td><td><span class="badge badge-b">B</span></td></tr>
+            <tr><td><a href="#issue-status">事業主体の現況（協会解散・事業撤退表明）</a></td><td>―（背景資料）</td><td>―</td><td><span class="badge badge-b">B</span>（背景）</td></tr>
+            <tr><td><a href="#issue-fx">講座内でのFX等の投資勧誘・助言</a></td><td>証券取引等監視委員会（SESC）／金融庁</td><td>金融商品取引法 29条ほか</td><td><span class="badge badge-c">C</span></td></tr>
+            <tr><td><a href="#issue-dose">メラトニン大量摂取の推奨・健康被害の申告</a></td><td>都道府県 薬務主管課／保健所／消費生活センター（188）</td><td>薬機法／消費者安全法</td><td><span class="badge badge-c">C</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>※「健康に関する虚偽・誇大表示」として健康増進法65条が挙げられることがありますが、同条の対象は<strong>食品として販売に供する物</strong>の表示に限られます。講座・役務そのものの効果表示は景品表示法が主たる根拠です（第2章・論点1参照）。</small></p>
+
+      <h2 id="issues"><span class="no">2</span>論点別資料（優先度順）</h2>
+      <div class="filterbar" role="group" aria-label="論点の絞り込み">
+        <div class="row">
+          <button class="fbtn" type="button" data-filter="all" aria-pressed="true">すべて</button>
+          <button class="fbtn" type="button" data-filter="a" aria-pressed="false">優先度 A のみ</button>
+          <button class="fbtn" type="button" data-filter="b" aria-pressed="false">優先度 B のみ</button>
+          <button class="fbtn" type="button" data-filter="c" aria-pressed="false">優先度 C のみ</button>
+          <input type="search" id="q" placeholder="論点・出典を検索（例：メラトニン、特商法）" aria-label="論点・出典を検索" />
+        </div>
+        <p class="count-note" id="countNote"></p>
+      </div>
+      <div id="issueList">
+
+      <!-- ===== 論点1 ===== -->
+      <article class="issue" id="issue-display" data-priority="a" data-search="受講生数 成功率 満足度 表示 景品表示法 優良誤認 不実証広告 GAHAKU PRESIDENT ZUU フォレスト出版 東京スポーツ 特商法表記">
+        <div class="issue-head">
+          <h3>論点1　受講生数・成功率等の表示 <span class="badge badge-a">優先度 A</span></h3>
+          <p style="margin:0">事業者側の公式発信・著者プロフィールに数字が現存し、媒体間で食い違うこと自体が客観的に照合できます。本件で最も証拠の形が整っている論点です。</p>
+          <div class="tags">
+            <span class="tag primary">一次情報あり</span><span class="tag">状態：閲覧可能（2026-11-09）</span>
+            <span class="tag">窓口：消費者庁（景品表示法）</span><span class="tag">法令：景品表示法5条・7条・8条</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <h4>確認できる事実（出典つき）</h4>
+          <div class="src">
+            <p class="src-title">GAHAKU株式会社 公式サイト（会社概要・代表プロフィール）</p>
+            <p class="src-meta"><span>種類：一次</span><span>状態：閲覧可能</span></p>
+            <blockquote>「独自プログラムによる睡眠指導を通じて<strong>2,000名を超える受講生</strong>のライフスタイル改善・短眠化を支援してきた」</blockquote>
+            <p class="src-url"><a href="https://gahaku.co.jp/" target="_blank" rel="noopener">https://gahaku.co.jp/</a><button class="copy-btn" type="button" data-copy="https://gahaku.co.jp/">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <p class="src-title">出版社等の著者プロフィールに残る過去の数値（媒体・時期で異なる）</p>
+            <p class="src-meta"><span>種類：準一次〜二次（事業者側提供のプロフィール文に基づくとみられる）</span><span>状態：閲覧可能</span></p>
+            <ul>
+              <li>PRESIDENT Online 著者ページ：「ショートスリーパーになったセミナー受講生は<strong>2200人以上</strong>、カリキュラム<strong>満足度は98.2％、睡眠の質改善率は92.7％（2023年8月時点調べ）</strong>」
+                <span class="src-url"><a href="https://president.jp/list/author/%E5%A0%80%20%E5%A4%A7%E8%BC%94" target="_blank" rel="noopener">https://president.jp/list/author/堀 大輔</a><button class="copy-btn" type="button" data-copy="https://president.jp/list/author/%E5%A0%80%20%E5%A4%A7%E8%BC%94">URLをコピー</button></span></li>
+              <li>ZUU online 著者ページ：「ショートスリーパーになった受講生は<strong>1,000人以上、成功率は99%を超える</strong>」
+                <span class="src-url"><a href="https://zuuonline.com/authors/daisuke_hori" target="_blank" rel="noopener">https://zuuonline.com/authors/daisuke_hori</a><button class="copy-btn" type="button" data-copy="https://zuuonline.com/authors/daisuke_hori">URLをコピー</button></span></li>
+              <li>フォレスト出版 著者ページ：「ショートスリーパーになった受講生は<strong>1000人を超える</strong>」
+                <span class="src-url"><a href="https://www.forestpub.co.jp/author/hori/" target="_blank" rel="noopener">https://www.forestpub.co.jp/author/hori/</a><button class="copy-btn" type="button" data-copy="https://www.forestpub.co.jp/author/hori/">URLをコピー</button></span></li>
+              <li>東京スポーツ単独インタビュー第5回（2026-11-08）のプロフィール欄：「これまでに<strong>2000人以上</strong>の受講生に短眠メソッドを指導する」
+                <span class="src-url"><a href="https://www.tokyo-sports.co.jp/articles/-/409165" target="_blank" rel="noopener">https://www.tokyo-sports.co.jp/articles/-/409165</a><button class="copy-btn" type="button" data-copy="https://www.tokyo-sports.co.jp/articles/-/409165">URLをコピー</button></span></li>
+              <li>産経新聞（二次）：協会は「満足度98%」などとうたって情報商材「睡眠改善プログラム」を提供していたと報道</li>
+            </ul>
+            <p><small>※現在のGAHAKU公式サイトには成功率・満足度の数値は載っていません。各数値の算出根拠（「成功」の定義、分母、集計期間）は未確認です。</small></p>
+          </div>
+          <div class="src">
+            <p class="src-title">GAHAKU株式会社 事業内容ページ（現在の公式説明）</p>
+            <p class="src-meta"><span>種類：一次</span><span>状態：閲覧可能</span></p>
+            <blockquote>「短い睡眠時間を一律に勧めるのではなく、ご自身の睡眠状態を理解し、無理のない範囲で睡眠をコントロールする力を身につけられるようサポートします」</blockquote>
+            <p><small>※現在の公式説明は「短眠化」を直接の成果としてうたっておらず、過去の表示と比べて表現は大幅に穏当化されています。過去表示との対比資料として有効です。</small></p>
+            <p class="src-url"><a href="https://gahaku.co.jp/works/" target="_blank" rel="noopener">https://gahaku.co.jp/works/</a><button class="copy-btn" type="button" data-copy="https://gahaku.co.jp/works/">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <p class="src-title">公式アプリ「Nature sleep マイページ」（Google Play）の説明文</p>
+            <p class="src-meta"><span>種類：一次</span><span>状態：ストア掲載中</span></p>
+            <blockquote>「Nature sleepは一般社団法人 日本ショートスリーパー育成協会がお伝えしている<strong>唯一無二のショートスリーパー®養成プログラム</strong>」「短時間睡眠で効率的に生活できることができる睡眠メソッド」</blockquote>
+            <p class="src-url"><a href="https://play.google.com/store/apps/details?id=net.shortsleeper.shortsleeper_mypage_app&hl=ja" target="_blank" rel="noopener">https://play.google.com/store/apps/details?id=net.shortsleeper.shortsleeper_mypage_app&amp;hl=ja</a><button class="copy-btn" type="button" data-copy="https://play.google.com/store/apps/details?id=net.shortsleeper.shortsleeper_mypage_app&hl=ja">URLをコピー</button></p>
+          </div>
+          <h4>法令との対応（一般的な整理）</h4>
+          <ul>
+            <li><strong>景品表示法5条1号（優良誤認）</strong>：実際のものより著しく優良であると示す表示の禁止。「成功率99%」は「成功」の定義・分母・集計期間・測定方法が表示と対応しているかが論点になります。</li>
+            <li><strong>同法7条2項・8条3項（不実証広告規制）</strong>：消費者庁長官等は、表示の裏付けとなる合理的な根拠資料の提出を事業者に求めることができ、提出がない／合理的と認められない場合は不当表示とみなされます。提出期間は原則15日以内（消費者庁Q&A）。</li>
+            <li>受講生数については、延べ人数か実人数か、無料視聴者・説明会参加者を含むか等の「数え方の定義」と実数の対応が論点です。公表数字同士の矛盾（時期・媒体による増減）自体が客観資料になります。</li>
+          </ul>
+          <h4>窓口</h4>
+          <p>消費者庁「景品表示法違反被疑情報提供フォーム」（担当：表示対策課 情報管理担当）<br />
+          <span class="src-url"><a href="https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/</a><button class="copy-btn" type="button" data-copy="https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/">URLをコピー</button></span>
+          <small>郵送・電話：〒100-8958 東京都千代田区霞が関3-1-1 中央合同庁舎第4号館7階／03-3507-8800（代表）。公正取引委員会の地方事務所等でも受付あり。措置結果・調査経過への回答は行われない旨が公式に明記されています。</small></p>
+          <div class="verdict verdict-a">
+            <strong>証拠評価：強い（今すぐ使える）</strong>
+            表示の全文が日付つきで現存します。情報提供の際は、表示全文のスクリーンショット（URL・取得日時つき）と、数値が媒体間で食い違う対照表を添えると処理が進みやすくなります。販売ページ（LP）は変更・削除されやすいため、ウェブアーカイブでの保全が推奨されます。
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 論点2 ===== -->
+      <article class="issue" id="issue-melatonin" data-priority="a" data-search="メラトニン サプリ 摂取 推奨 薬機法 未承認 医薬品 個人輸入 厚生労働省 あやしいヤクブツ">
+        <div class="issue-head">
+          <h3>論点2　メラトニンの摂取推奨 ― 公開配信で確認できる範囲 <span class="badge badge-a">優先度 A（範囲限定）</span></h3>
+          <p style="margin:0">本人の公開配信の字幕から、視聴者にメラトニン等の摂取を勧める発言が確認できます。ただし確認できるのは一般的な推奨の範囲で、用量の指定はこの範囲では確認できていません（大量摂取の推奨は論点7＝優先度C）。</p>
+          <div class="tags">
+            <span class="tag primary">一次情報あり（字幕）</span><span class="tag gone">一部は非公開化済み</span>
+            <span class="tag">窓口：都道府県 薬務主管課／厚生労働省</span><span class="tag">法令：薬機法66条・68条、医師法17条</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <h4>確認できる事実（出典つき）― 公開中の配信・字幕から</h4>
+          <p><small>いずれも2026年9月の「1週間配信」での視聴者への回答。字幕は自動生成のため、細部は音声確認が望ましい旨を申し添えます。</small></p>
+          <div class="src">
+            <blockquote><span class="ts">[2日目・1:48:56頃]</span> 飛行機のエコノミーで寝るコツを聞かれ「<strong>メラトニン4時間前に取ったらいいと思うよ</strong>」</blockquote>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=BggNM6kg_S4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=BggNM6kg_S4</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=BggNM6kg_S4">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <blockquote><span class="ts">[2日目・3:49:24頃]</span> 眠れないと訴える視聴者に「<strong>グリシンとかメラトニン取れるといいですね</strong>。あとはビタミンB6とかマグネシウムとか」</blockquote>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=tdBqE6TxfZo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=tdBqE6TxfZo</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=tdBqE6TxfZo">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <blockquote><span class="ts">[1日目・4:16:55頃]</span> 自身の睡眠について「眠の前にメラトニンとかね、そっち行けりゃいいんすけどね」（字幕ママ）</blockquote>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=CsqFzV8RUFM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=CsqFzV8RUFM</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=CsqFzV8RUFM">URLをコピー</button></p>
+          </div>
+          <h4>非公開化された配信（記録のみ現存）</h4>
+          <div class="src">
+            <p class="src-meta"><span>種類：一次（だったもの）</span><span>状態：<strong>非公開（2026-11-09現在アクセス不可）</strong></span></p>
+            <ul>
+              <li>不眠を訴える視聴者に「メラトニンを飲みましょう。<strong>まずは3mgから</strong>。グリシンもいいけどね。寝る1時間前グリシン、寝る4時間前メラトニン」
+                <span class="src-url"><a href="https://www.youtube.com/watch?v=Sp7KYdjjgbE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Sp7KYdjjgbE</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=Sp7KYdjjgbE">URLをコピー</button></span></li>
+              <li>夕方に寝る生活の人はメラトニンの量を「3mgぐらい上げた方がいい」
+                <span class="src-url"><a href="https://www.youtube.com/watch?v=YTfNiiqNxHk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YTfNiiqNxHk</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=YTfNiiqNxHk">URLをコピー</button></span></li>
+            </ul>
+            <p><small>※上記2件は2026年10月30日時点の調査で文字起こしレベルで確認されていた発言です。現在はリンクを開いても視聴できず、発言の記録は当時の調査記録に残るのみです。証拠として用いる場合は、当時の録画・文字起こしの原本の保全状況の確認が必要です。</small></p>
+          </div>
+          <h4>メラトニンについての正確な整理</h4>
+          <ul>
+            <li>厚生労働省はメラトニンを「国内では専ら医薬品として使用される成分本質（原材料）」とし、医薬品成分（メラトニン）が検出された「いわゆる健康食品」を無承認無許可医薬品情報として公表した実績があります。
+              <span class="src-url"><a href="https://www.mhlw.go.jp/kinkyu/diet/other/080611-1.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/kinkyu/diet/other/080611-1.html</a><button class="copy-btn" type="button" data-copy="https://www.mhlw.go.jp/kinkyu/diet/other/080611-1.html">URLをコピー</button></span></li>
+            <li>正確な整理は「メラトニンという成分の海外サプリメント製品は、日本で医薬品としても食品としても正規に流通が認められた製品ではない」であり、判断は<strong>製品単位</strong>で行われます。特定の製品名・販売形態（本人が在庫を持って渡しているのか、海外サイトへのリンク紹介だけか等）によって適用条文が変わります（要確認）。</li>
+            <li>個人輸入は自分自身で使用する場合に限られ、他人への販売・譲渡は認められません。個人輸入品による健康被害は医薬品副作用被害救済制度の対象外です（厚生労働省解説）。</li>
+          </ul>
+          <h4>法令との対応（一般的な整理）</h4>
+          <ul>
+            <li><strong>薬機法68条</strong>：未承認医薬品等についての広告の禁止。「広告」に当たるかは、製品名の明示・購入意欲の喚起・購入先や割引コードの提示等から判断されます。製品を特定しない一般論の知識紹介だけでは広告と言いにくい面があります（個別判断）。</li>
+            <li><strong>薬機法66条1項</strong>：医薬品等の効能・効果についての虚偽・誇大な広告等の禁止（「何人も」が対象）。</li>
+            <li><strong>薬機法24条・55条2項</strong>：本人が販売・授与している場合は最も強い類型になります。金銭の授受・発送記録・パッケージが鍵です。</li>
+            <li>相手の状態に応じた個別の用量指示であれば、医師法17条（論点3）の観点でも評価されます。</li>
+          </ul>
+          <h4>窓口</h4>
+          <p>事業者所在地の<strong>都道府県 薬務主管課</strong>（実務の中心）／厚生労働省「あやしいヤクブツ連絡ネット」（個人輸入・違法販売・健康被害の情報収集）<br />
+          <span class="src-url"><a href="https://www.yakubutsu.mhlw.go.jp/index.html" target="_blank" rel="noopener">https://www.yakubutsu.mhlw.go.jp/index.html</a><button class="copy-btn" type="button" data-copy="https://www.yakubutsu.mhlw.go.jp/index.html">URLをコピー</button></span></p>
+          <div class="verdict verdict-a">
+            <strong>証拠評価：公開中の3件は使える／非公開の2件は「記録のみ」で弱い</strong>
+            公開中の発言はURL＋タイムスタンプで誰でも照合できます。一方、非公開化された発言は現時点では第三者が検証できず、単独では弱い証拠です。証拠として効くのは、製品名・用量・効果を述べた録音／動画／文字起こし（日時・話者・媒体つき）、購入先URL・紹介リンク・割引コードのスクリーンショット（URL全体と投稿日時を含むもの）です。
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 論点3 ===== -->
+      <article class="issue" id="issue-medical" data-priority="b" data-search="医師法 医行為 高須幹弥 短眠 健康被害 妊婦 子ども 対談 無資格 指導">
+        <div class="issue-head">
+          <h3>論点3　短眠指導への医師の否定と健康リスク <span class="badge badge-b">優先度 B</span></h3>
+          <p style="margin:0">医師である高須幹弥氏が、対談および自身の動画で短眠指導を明確に否定しています。ただし医師法違反の成否は「個別指導の逐語」が要るため、本論点の資料は背景・端緒としての位置づけです。</p>
+          <div class="tags">
+            <span class="tag">種類：二次（医師である第三者の発信）＋一次（対談の本人側映像）</span>
+            <span class="tag">窓口：都道府県 医務主管課・保健所</span><span class="tag">法令：医師法17条・31条</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <h4>確認できる事実（出典つき）</h4>
+          <div class="src">
+            <p class="src-title">対談動画（本人チャンネル側）「高須幹弥先生に誹謗中傷について…バチバチの口論になりました」（2026-08-31）</p>
+            <p class="src-meta"><span>種類：一次（本人の発言を収めた動画）</span><span>状態：公開中</span></p>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=xTFSkoTd_TQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=xTFSkoTd_TQ</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=xTFSkoTd_TQ">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <p class="src-title">高須幹弥氏「なぜ堀大輔は嘘をつき続けるのか？」（2026-09-30）字幕からの抜粋</p>
+            <p class="src-meta"><span>種類：二次</span><span>状態：公開中</span><span>※字幕はYouTube自動生成。「短眠」が「担任」等と誤変換されている箇所あり</span></p>
+            <blockquote><span class="ts">[02:34–03:22]</span> 「堀さんの主張してることはもう間違いだと。明確に医者として否定して、意見は対立した」「睡眠時間を短縮させるってことはもう様々な健康被害が起こるわけですよ。……思考能力が低下するとか認知症になりやすくなるとか攻撃性が高まるとか免疫力が低下して癌になりやすくなるとか感染症にかかりやすくなるとか血管の病気になりやすくなるとか生活習慣病になりやすくなるとか」</blockquote>
+            <blockquote><span class="ts">[03:05–03:17]</span> 「それプラス妊婦とか子供に関しても睡眠改善プログラムで睡眠時間を短縮したとかねそういう話もしててもそれは<strong>絶対ダメですよ。医者としてそれは明確におかしい</strong>ってことを言います」</blockquote>
+            <blockquote><span class="ts">[03:37–04:04]</span> （顔写真の広告使用について）「対談記念睡眠改善プログラム50%オフっていうキャンペーンを売ってその中で僕の顔写真も使われたわけですよね。僕はあの顔写真を使って50%オフのキャンペーン出すってことは許可出してないんですよ。<strong>無断で僕の写真使って広告やったんですね、彼は。だけど彼は僕が許可出したって言いはるんですよ</strong>」</blockquote>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=YRAgJTzvmJI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YRAgJTzvmJI</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=YRAgJTzvmJI">URLをコピー</button></p>
+            <p><small>※顔写真入りのキャンペーンページの現物は未確認です（幹弥氏の主張のみ）。幹弥氏自身、動機の推測部分は「僕の予想」と明言しています [07:21–07:27]。また、撮影の裏話動画（本人チャンネル）はメンバー限定化され一般閲覧不可です。</small></p>
+          </div>
+          <div class="src">
+            <p class="src-title">高須幹弥氏 2026-10-25動画 字幕からの抜粋</p>
+            <p class="src-meta"><span>種類：二次</span><span>状態：公開中</span></p>
+            <blockquote><span class="ts">[09:59–10:22]</span> 「成人した方でも適切な睡眠時間を短縮するのは、慢性的な睡眠不足を作ってしまって健康被害が出ますので、精神疾患になりやすくなるとか、感情的になるとか、怒りっぽくなるとか、感染症にかかりやすくなるとか、生活習慣病になりやすいとか、様々な健康被害が起きますので、それはやめて欲しい」</blockquote>
+            <blockquote><span class="ts">[11:00–11:16]</span> 「僕以外の世界中のお医者さんは僕ともうほとんどのお医者さんが僕と同じ意見なので（中略）睡眠の研究家でもみんな僕と同じ意見です」</blockquote>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=_32KKdLN438" target="_blank" rel="noopener">https://www.youtube.com/watch?v=_32KKdLN438</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=_32KKdLN438">URLをコピー</button></p>
+          </div>
+          <h4>法令との対応（一般的な整理）</h4>
+          <ul>
+            <li><strong>医師法17条</strong>：「医師でなければ、医業をなしてはならない。」違反は同法31条により3年以下の懲役若しくは100万円以下の罰金又は併科。</li>
+            <li>「医業」とは、医師の医学的判断及び技術をもってするのでなければ人体に危害を及ぼし、又は危害を及ぼすおそれのある行為（医行為）を、反復継続の意思をもって行うこと、と解されています（厚生労働省医政局長通知）。</li>
+            <li>強く医行為に寄る例：特定個人の症状・検査値・既往歴・服用中の薬を踏まえた見立ての伝達／処方薬・未承認薬の開始・増減・中止の指示／「病院に行かなくてよい」等の受診要否の判断。逆に、不特定の聴衆への一般的な知識提供だけでは医行為と言いにくく、<strong>食事制限の指導もそれだけで直ちに医行為とは言えません（要確認・個別判断）</strong>。</li>
+            <li>実務は「事実確認 → 行政指導（中止要請等）→ 悪質・反復・被害ありの場合は警察連携」の段階を踏むことが多く、1件の曖昧な発言だけでは指導に至らない可能性が高いと整理されています。</li>
+          </ul>
+          <p><small>出典：医師法（e-Gov）<a href="https://laws.e-gov.go.jp/law/323AC0000000201" target="_blank" rel="noopener">https://laws.e-gov.go.jp/law/323AC0000000201</a>／厚生労働省「医行為」について <a href="https://www.mhlw.go.jp/shingi/2003/02/s0203-2g.html" target="_blank" rel="noopener">https://www.mhlw.go.jp/shingi/2003/02/s0203-2g.html</a></small></p>
+          <h4>窓口</h4>
+          <p>事業所所在地の<strong>都道府県 医務主管課</strong>、保健所設置自治体・<strong>保健所</strong>（現場対応の中心）。医療安全支援センター、悪質な場合は警察も経路になります。</p>
+          <div class="verdict verdict-b">
+            <strong>証拠評価：背景資料としては有効／違反の裏付けには個別指導の実例が別途必要</strong>
+            医師の否定発言は「専門家の見解」として健康リスクの説明に使えますが、医師法の観点で行政を動かすには、指導の逐語（録音・録画・配布資料・チャット全文）、個別性（誰の・どの症状や薬について判断したか）、反復性・事業性（募集ページ・料金表・開催実績）が分かる資料を複数揃える必要があります。なお、妊婦・子どもへの指導に関する本人の一次発言の該当箇所は、現時点で特定未実施です（未確認事項リスト参照）。
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 論点4 ===== -->
+      <article class="issue" id="issue-sales" data-priority="b" data-search="特定商取引法 特商法 返金 キャンセル 所在地 電話番号 クーリングオフ 違約金 競業避止 料金 165000 申込">
+        <div class="issue-head">
+          <h3>論点4　販売方法・特商法表記・解約条件 <span class="badge badge-b">優先度 B</span></h3>
+          <p style="margin:0">特商法表記ページ自体は一次情報として現存します。一方、料金・申込条件の一次ページは現在閲覧できず二次情報のみです。また「クーリング・オフが使える」という案内は本件では誤りになりやすい点に注意してください。</p>
+          <div class="tags">
+            <span class="tag primary">特商法表記は一次</span><span class="tag gone">申込ページは閲覧不可</span>
+            <span class="tag">窓口：消費者庁（特商法）／消費生活センター</span><span class="tag">法令：特商法11条・12条ほか</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <h4>確認できる事実（出典つき）</h4>
+          <div class="src">
+            <p class="src-title">GAHAKU株式会社 特定商取引法に基づく表記</p>
+            <p class="src-meta"><span>種類：一次</span><span>状態：閲覧可能</span></p>
+            <ul>
+              <li>販売事業者：GAHAKU株式会社／代表責任者名 堀 大輔／E-Mail：info@gahaku.co.jp</li>
+              <li>販売価格：「申込サイトをご参照ください」（価格自体はこのページに記載なし）</li>
+              <li>返品・返金・キャンセル等：「<strong>原則として決済完了後の返金には応じかねます</strong>が、当社の定める条件を満たす場合は返金対応を行う場合があります」</li>
+              <li>注意書き：「商品に示された表現や再現性には個人差があり、<strong>必ずしも効果を保証したものではございません</strong>」</li>
+              <li><strong>所在地・電話番号：「請求があった場合に遅滞なく開示いたします」</strong>（ページ上に住所・電話番号の表示なし）</li>
+            </ul>
+            <p class="src-url"><a href="https://gahaku.co.jp/tokusho/" target="_blank" rel="noopener">https://gahaku.co.jp/tokusho/</a><button class="copy-btn" type="button" data-copy="https://gahaku.co.jp/tokusho/">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <p class="src-title">講座申込ページ（nature-sleep.info）と料金</p>
+            <p class="src-meta"><span>種類：二次（一次ページは現在確認不可）</span><span>状態：トップはプレースホルダ表示、申込ページ本文は閲覧不可</span></p>
+            <ul>
+              <li>11月期：受講料 <strong>165,000円（税込）／1カ月</strong>、12月以降の継続は任意で月額 <strong>33,000円（税込）</strong>（NOW IN QUESTION／coki／mediadogs の報道による）</li>
+              <li>2026年9月14日確認時点の募集では「2カ月165,000円（税込）」と案内されていたとする記録もあり、募集月により期間・条件が変動しています</li>
+              <li>経緯：2026年10月15日時点では協会公式サイトから申込ページにたどれたが、10月24日に新規募集終了が発表され、従来の申込ページには「公開停止中」と表示されたと報じられています</li>
+            </ul>
+            <p class="src-url"><a href="https://nowinquestion.com/ja/articles/hori-daisuke-short-sleeper-approval-seeking-backlash/" target="_blank" rel="noopener">https://nowinquestion.com/ja/articles/hori-daisuke-short-sleeper-approval-seeking-backlash/</a><button class="copy-btn" type="button" data-copy="https://nowinquestion.com/ja/articles/hori-daisuke-short-sleeper-approval-seeking-backlash/">URLをコピー</button></p>
+            <p class="src-url"><a href="https://coki.jp/article/column/96264/" target="_blank" rel="noopener">https://coki.jp/article/column/96264/</a><button class="copy-btn" type="button" data-copy="https://coki.jp/article/column/96264/">URLをコピー</button></p>
+            <p class="src-url"><a href="https://mediadogs.jp/2026/10/09/hori-daisuke-new-enrollment-december/" target="_blank" rel="noopener">https://mediadogs.jp/2026/10/09/hori-daisuke-new-enrollment-december/</a><button class="copy-btn" type="button" data-copy="https://mediadogs.jp/2026/10/09/hori-daisuke-new-enrollment-december/">URLをコピー</button></p>
+          </div>
+          <div class="src">
+            <p class="src-title">購入申込規約の高額違約金（報道のみ）</p>
+            <p class="src-meta"><span>種類：二次</span><span>状態：規約本文の一次資料は未確認</span></p>
+            <p>睡眠改善プログラムの購入申込規約に、退会後5年間の競業避止と違反時の違約金500万円の条項があったと報じられています（女性自身／Yahoo!ニュース）。</p>
+            <p class="src-url"><a href="https://news.yahoo.co.jp/articles/fbdff0e54aac9d0f98a62c10269c38cf74879098" target="_blank" rel="noopener">https://news.yahoo.co.jp/articles/fbdff0e54aac9d0f98a62c10269c38cf74879098</a><button class="copy-btn" type="button" data-copy="https://news.yahoo.co.jp/articles/fbdff0e54aac9d0f98a62c10269c38cf74879098">URLをコピー</button></p>
+          </div>
+          <h4>法令との対応（一般的な整理）― 重要な注意点を含む</h4>
+          <ul>
+            <li>特商法は販売方法ごとにルールが異なります。自らウェブサイトを見て申し込む形態は<strong>通信販売</strong>（11条の広告表示義務、12条の誇大広告禁止、12条の2の不実証広告規制）。営業所等以外の場所での勧誘・契約は訪問販売、電話勧誘は電話勧誘販売に当たる場合があり、<strong>勧誘から契約までの経緯の記録が類型判断を決めます</strong>。</li>
+            <li>通信販売にクーリング・オフ制度はありません（15条の3の返品特約ルールは商品・特定権利が対象で、役務提供そのものへの適用は契約構造による＝要確認）。</li>
+            <li><strong>「特定継続的役務提供」に睡眠・健康講座は原則として含まれません。</strong>指定されているのはエステティック、美容医療、語学教室、家庭教師、学習塾、パソコン教室、結婚相手紹介サービスの7役務のみです。したがって「特商法のクーリング・オフ（特定継続的役務）で解約できる」と案内するのは誤りになりやすいので、相談対応ではまず取引類型の確認から入ってください（例外：契約内に指定役務そのものが含まれる場合はその部分に規制が及ぶ可能性あり）。</li>
+            <li>行政処分で個別の返金は実現しません。返金交渉は消費生活センターのあっせん等、別ルートが必要です。</li>
+          </ul>
+          <p><small>出典：特定商取引法（e-Gov）<a href="https://laws.e-gov.go.jp/law/351AC0000000057/" target="_blank" rel="noopener">https://laws.e-gov.go.jp/law/351AC0000000057/</a>／消費者庁 特商法ガイド <a href="https://www.no-trouble.caa.go.jp/what/mailorder/index.html" target="_blank" rel="noopener">通信販売</a>・<a href="https://www.no-trouble.caa.go.jp/what/continuousservices/index.html" target="_blank" rel="noopener">特定継続的役務提供</a></small></p>
+          <h4>窓口</h4>
+          <p>消費者庁「特定商取引法違反被疑情報提供フォーム」（担当：取引対策課）<br />
+          <span class="src-url"><a href="https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/</a><button class="copy-btn" type="button" data-copy="https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/">URLをコピー</button></span>
+          <small>正式な「申出」（特商法60条）は申出書様式により都道府県知事または消費者庁長官・経済産業局長へ（<a href="https://www.no-trouble.caa.go.jp/offer/" target="_blank" rel="noopener">特定商取引法ガイド・申出制度</a>）。個別の契約トラブル・返金相談は消費者ホットライン <strong>188</strong> → 地元の消費生活センターへ。</small></p>
+          <div class="verdict verdict-b">
+            <strong>証拠評価：特商法表記は一次として使える／料金・規約は二次止まり</strong>
+            効く資料は、広告ページ・申込画面・最終確認画面の全文スクリーンショット（特商法表記の有無、返品特約の表示位置が分かるもの）、契約書面・利用規約・領収書・決済記録、勧誘時の録音、解約申入れと事業者回答の記録です。「広告が悪い」という抽象論より、勧誘から契約までの時系列と書面一式が最も効きます。
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 論点5 ===== -->
+      <article class="issue" id="issue-status" data-priority="b" data-search="協会 解散 廃止 GAHAKU 撤退 事業 現況 官報 産経新聞 本人チャンネル 配信">
+        <div class="issue-head">
+          <h3>論点5　事業主体の現況（背景資料） <span class="badge badge-b">優先度 B（背景）</span></h3>
+          <p style="margin:0">相談対応の前提となる事業者の現況です。旧協会は解散済みで、問い合わせ先はGAHAKU株式会社に移っています。本人は睡眠事業からの撤退を表明する動画も公開しています。</p>
+          <div class="tags">
+            <span class="tag primary">一次＋報道</span><span class="tag">状態：確認日 2026-11-09</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <div class="src">
+            <p class="src-title">一般社団法人日本ショートスリーパー育成協会 公式サイト（現状）</p>
+            <p class="src-meta"><span>種類：一次</span><span>状態：閲覧可能だが「廃止のお知らせ」のみ。従来の講座案内・体験レポート等は表示されない</span></p>
+            <blockquote>「一般社団法人日本ショートスリーパー育成協会は廃止済みです。現在の事業、お問い合わせにつきましては、すべて GAHAKU株式会社 が対応しております。メールでのお問い合わせ：info@gahaku.co.jp」</blockquote>
+            <p class="src-url"><a href="https://short-sleeper.or.jp/" target="_blank" rel="noopener">https://short-sleeper.or.jp/</a><button class="copy-btn" type="button" data-copy="https://short-sleeper.or.jp/">URLをコピー</button></p>
+            <p><small>補足（二次）：協会は2026年9月30日付で解散し、10月26日付の官報に解散公告が掲載。代表清算人は堀大輔氏（産経新聞 2026-10-27／東京商工リサーチ）。<a href="https://www.sankei.com/article/20261027-GAH4FMAIZZHONOFMB7GWMEOTSA/" target="_blank" rel="noopener">産経新聞の記事</a></small></p>
+          </div>
+          <div class="src">
+            <p class="src-title">本人の表明・発信（YouTubeチャンネル「堀大輔の日常」@horidaisuke-real）</p>
+            <p class="src-meta"><span>種類：一次</span><span>状態：いずれも公開中（2026-11-09確認）</span></p>
+            <ul>
+              <li>2026-11-02「睡眠事業から撤退！？43歳で目指すこととは…？」― 睡眠事業からの撤退表明
+                <span class="src-url"><a href="https://www.youtube.com/watch?v=Fxn3qEzyb3Q" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Fxn3qEzyb3Q</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=Fxn3qEzyb3Q">URLをコピー</button></span></li>
+              <li>2026-09-28「本日発売の週刊ポストについて、弊社の見解と受講生の感想を語りました」― 報道への会社見解＋受講生の感想
+                <span class="src-url"><a href="https://www.youtube.com/watch?v=OM4xoNNnx9U" target="_blank" rel="noopener">https://www.youtube.com/watch?v=OM4xoNNnx9U</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=OM4xoNNnx9U">URLをコピー</button></span></li>
+              <li>2025-04-22「１日のスタートが劇的に変わった！睡眠改善プログラムお客様の声」― 効果のうたい方の資料（受講生の声）
+                <span class="src-url"><a href="https://www.youtube.com/watch?v=2x1_pWiBFqg" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2x1_pWiBFqg</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=2x1_pWiBFqg">URLをコピー</button></span></li>
+              <li>チャンネル本体
+                <span class="src-url"><a href="https://www.youtube.com/channel/UCvvvp06BNBYpuiT5zKHYLXA" target="_blank" rel="noopener">https://www.youtube.com/channel/UCvvvp06BNBYpuiT5zKHYLXA</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/channel/UCvvvp06BNBYpuiT5zKHYLXA">URLをコピー</button></span></li>
+            </ul>
+          </div>
+          <div class="src">
+            <p class="src-title">東京スポーツ単独インタビュー第5回（2026-11-08）― 本人の発言の引用を含む報道</p>
+            <p class="src-meta"><span>種類：二次（本人の発言の引用を含む）</span><span>状態：閲覧可能</span></p>
+            <blockquote>「実は1週間ライブの前に、誹謗中傷を受けるように計算して炎上させたこともあった。1週間ライブのストレスがすさまじいものになると思っていたので、その前に燃やして、ストレスの負荷を自分にかけて鍛えたつもり」</blockquote>
+            <p><small>※1週間配信は同時接続10万人超だったこと、配信終了後に幻覚のような症状があったこと等も本人の発言として報じられています。</small></p>
+            <p class="src-url"><a href="https://www.tokyo-sports.co.jp/articles/-/409165" target="_blank" rel="noopener">https://www.tokyo-sports.co.jp/articles/-/409165</a><button class="copy-btn" type="button" data-copy="https://www.tokyo-sports.co.jp/articles/-/409165">URLをコピー</button></p>
+          </div>
+          <div class="verdict verdict-b">
+            <strong>使い方：相談対応の前提確認用</strong>
+            「協会はもう存在しないのか」「今の窓口はどこか」という基本確認に使えます。契約相手が協会名義かGAHAKU名義かで書面の確認先が変わるため、相談者の契約書面の名義を必ず確認してください。
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 論点6 ===== -->
+      <article class="issue" id="issue-fx" data-priority="c" data-search="FX 投資 勧誘 助言 金融商品取引法 無登録 SESC 証券取引等監視委員会 金融庁 ファンド">
+        <div class="issue-head">
+          <h3>論点6　講座内でのFX等の投資勧誘・助言 <span class="badge badge-c">優先度 C</span></h3>
+          <p style="margin:0">界隈では指摘の声がありますが、<strong>現段階で一次資料（具体的な売買指示の記録等）は確認できていません</strong>。この欄は「断定材料がない」ことと、「証拠化するには何が必要か」「窓口はどこか」を示すためのものです。</p>
+          <div class="tags">
+            <span class="tag gone">一次資料：未確認</span>
+            <span class="tag">窓口：証券取引等監視委員会（SESC）／金融庁・財務局</span><span class="tag">法令：金融商品取引法29条・197条の2ほか</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <h4>現状</h4>
+          <ul>
+            <li>講座内で具体的な投資判断（通貨ペア・売買の別・時期・数量等）の助言が行われたことを示す、録音・録画・チャット記録等の一次資料は、2026-11-09時点の調査では確認できていません。</li>
+            <li>したがって本論点は、現時点では情報提供の「結論」には使えず、相談者から具体的な記録の提供があった場合に初めて組み立てが可能になる論点です。</li>
+          </ul>
+          <h4>法令の枠組み（一般的な整理）</h4>
+          <ul>
+            <li><strong>金融商品取引法29条</strong>：金融商品取引業は内閣総理大臣の登録を受けた者でなければ行えません。無登録営業は同法197条の2により5年以下の懲役（現行法令では拘禁刑と表記される場合あり）若しくは500万円以下の罰金又は併科。</li>
+            <li>投資助言に当たるかは、一般的な投資教育（仕組み・用語・リスクの説明）か、分析に基づく具体的な投資判断の伝達かで分かれます。有料の閉じた講座・コミュニティ内での助言は登録が必要な側に寄りますが、登録要否は一連の行為における位置づけから総合的に判断されます（金融庁監督指針）。</li>
+            <li>単に「FXは稼げる」という一般的な宣伝だけでは金商法の投資助言にはなりにくく、景品表示法・特商法の問題として整理する方が適切な場合があります。</li>
+          </ul>
+          <p><small>出典：金融商品取引法（e-Gov）<a href="https://laws.e-gov.go.jp/law/323AC0000000025" target="_blank" rel="noopener">https://laws.e-gov.go.jp/law/323AC0000000025</a>／SESC情報提供窓口 <a href="https://www.fsa.go.jp/sesc/watch/" target="_blank" rel="noopener">https://www.fsa.go.jp/sesc/watch/</a></small></p>
+          <h4>窓口</h4>
+          <p>証券取引等監視委員会 情報提供窓口（事務局 市場分析審査課 情報処理係）／金融庁 金融サービス利用者相談室。連絡先の詳細は<a href="#windows">第5章</a>。</p>
+          <div class="verdict verdict-c">
+            <strong>証拠評価：現時点では不足 ― 必要な資料が揃えば評価が変わる論点</strong>
+            証拠化に必要なもの：①助言の具体的内容が分かる資料（売買指示のチャット・配信録画・セミナー録音で、銘柄／通貨ペア・時期・価格・数量を含むもの）、②対価性が分かる資料（料金表・「FX指導付き」等のコース表示・決済記録）、③継続性・会員制が分かる資料。登録の有無は金融庁の登録業者検索で確認でき、「登録が見当たらない」旨を添えると処理が速くなります。個別の損失回復は行政手続では実現しません。
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 論点7 ===== -->
+      <article class="issue" id="issue-dose" data-priority="c" data-search="メラトニン 20mg 大量 オーバードーズ 健康被害 副作用 消費者安全法 保健所 PMDA シュンの解説 メルマガ">
+        <div class="issue-head">
+          <h3>論点7　メラトニン大量摂取の推奨・健康被害の申告 <span class="badge badge-c">優先度 C</span></h3>
+          <p style="margin:0">「40歳を超えたら20mgくらい取ってよい」等の大量摂取の推奨は、第三者の指摘動画の段階にとどまり、講義の録音・録画・メルマガ本文等の一次資料は未確認です。凍結・削除で原資料にアクセスできなくなった経緯があるため、優先度を下げて掲載します。</p>
+          <div class="tags">
+            <span class="tag gone">種類：証言のみ</span><span class="tag gone">一次資料：未確認</span>
+            <span class="tag">窓口：都道府県 薬務主管課／保健所／消費生活センター</span><span class="tag">法令：薬機法／消費者安全法</span>
+          </div>
+        </div>
+        <div class="issue-body">
+          <h4>現存する指摘（出典つき）</h4>
+          <div class="src">
+            <p class="src-title">第三者チャンネル「シュンの解説」動画「堀大輔さん常軌を逸した量のメラトニン摂取を受講生に勧めていた」（2026-10-09）</p>
+            <p class="src-meta"><span>種類：証言のみ</span><span>状態：公開中</span></p>
+            <p>指摘内容：講義の場で受講生にメラトニンを「絶対に取るべき」と勧め、「40歳を超えたら20mgくらい取ってよい」「自分は1日13mg取っている」と述べ、iHerbの紹介リンクを受講生のLINEグループに送った、とされる。</p>
+            <p class="src-url"><a href="https://www.youtube.com/watch?v=Kh8eUTUumqM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Kh8eUTUumqM</a><button class="copy-btn" type="button" data-copy="https://www.youtube.com/watch?v=Kh8eUTUumqM">URLをコピー</button></p>
+            <p><small>※「メラトニン20mgを入れるよう指示したメルマガ」の文言については、複数クエリの検索で本文・引用・アーカイブ・スクリーンショットは見つからず<strong>未確認</strong>です。</small></p>
+          </div>
+          <h4>健康被害が出ている場合の扱い</h4>
+          <ul>
+            <li>健康食品・サプリ等によると疑われる健康被害は<strong>最寄りの保健所</strong>へ（PMDA公式ページも同旨を案内）。医薬品による副作用は PMDA 患者副作用報告の対象になり得ます。</li>
+            <li>個人が健康被害を知らせる実務上の経路は<strong>消費生活センター等への相談</strong>です（消費者安全法の「重大事故等」の消費者庁への通知は行政機関等が行うもので、個人が直接消費者庁へ通知する制度ではありません）。相談情報はPIO-NETに集約され、法執行・注意喚起の端緒になります。</li>
+            <li>生命・身体被害については、消費者安全調査委員会への申出（消費者安全法28条）も可能です：<a href="https://www.caa.go.jp/policies/application/inquiry/inquiry_001/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/application/inquiry/inquiry_001/</a></li>
+            <li>重大事故等の目安は、死亡／治療に30日以上を要する負傷・疾病／一定の身体障害が残るもの等です。診断書・受診記録で治療期間を裏付けられるかが重要になります。</li>
+          </ul>
+          <div class="verdict verdict-c">
+            <strong>証拠評価：現時点では「指摘がある」段階 ― 断定には使えない</strong>
+            証拠化に必要なもの：講義・個別相談の録音／録画、メルマガ本文、LINE送信画面（用量・購入先・紹介リンクが写るもの）、実際に届いた製品のパッケージ写真、健康被害がある場合は医療機関の診断書と「何を・いつ・どれだけ摂取し、いつ症状が出たか」の時系列。同種被害が複数人で起きている事実（人数・時期）が揃うと、行政が動きやすくなります。製品の現物・パッケージは廃棄せず保管してください。
+          </div>
+        </div>
+      </article>
+      </div><!-- /issueList -->
+
+      <h2 id="lost"><span class="no">3</span>消えた／閉じた一次資料の一覧</h2>
+      <p class="lead">以前は公開されていた一次資料のうち、2026年11月9日時点で閲覧できなくなっているものです。リンクを送っても相手が確認できないため、取り扱いに注意してください。</p>
+      <div class="tbl-wrap">
+        <table class="data">
+          <thead><tr><th style="width:44%">資料</th><th style="width:24%">以前の状態</th><th style="width:32%">現在（2026-11-09）</th></tr></thead>
+          <tbody>
+            <tr><td>協会公式サイトの講座・体験談ページ</td><td>公開</td><td>廃止告知のみに置換</td></tr>
+            <tr><td>講座申込ページ（nature-sleep.info）</td><td>募集案内を掲載</td><td>プレースホルダ表示（本文なし）</td></tr>
+            <tr><td>本人配信 Sp7KYdjjgbE（メラトニン「まずは3mgから」）</td><td>公開</td><td><strong>非公開</strong></td></tr>
+            <tr><td>本人配信 YTfNiiqNxHk（メラトニン量の言及）</td><td>公開</td><td><strong>非公開</strong></td></tr>
+            <tr><td>本人動画 C6PeMdnZyT4（高須氏撮影の裏話）</td><td>公開</td><td><strong>メンバー限定</strong></td></tr>
+            <tr><td>界隈の内部資料（凍結されたアカウント経由で共有されていたもの）</td><td>閲覧可能だった</td><td>アカウント凍結により閲覧不可のものがある</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>※削除・非公開化された資料については、日付と文字起こしの記録が残っていても、現時点では第三者が原文を検証できません。証拠として扱う場合は「いつ・誰が・どの媒体で記録したか」と原本（録画・画面収録等）の有無を必ず確認してください。</small></p>
+
+      <h2 id="unknown"><span class="no">4</span>未確認事項リスト（推測で埋めていないもの）</h2>
+      <p class="lead">以下は2026年11月9日時点で確認できていない事項です。相談者に聞かれた場合は「未確認」と答え、推測で補わないでください。</p>
+      <ol>
+        <li><strong>講座申込ページ（nature-sleep.info）の正確なURLと本文</strong> ― 一次ページは現在閲覧不可。料金・条件は二次情報のみ現存。</li>
+        <li><strong>メラトニン20mg推奨の一次資料</strong> ― 講義での推奨発言の録音・録画、メルマガ本文、LINE送信画面はいずれも未確認。現存するのは第三者の指摘動画のみ。</li>
+        <li><strong>高須幹弥氏の顔写真を使った「対談記念50%オフ」キャンペーンページの現物</strong> ― 未確認（幹弥氏の主張のみ）。</li>
+        <li><strong>妊婦・子どもへの指導に関する本人の一次発言の該当箇所</strong> ― 対談動画内に存在する可能性は幹弥氏の言及から示唆されるが、箇所の特定は未実施。</li>
+        <li><strong>旧協会サイト（解散前）の講座案内ページ・受講者体験レポートページの本文</strong> ― 現在は廃止告知のみ。Webアーカイブ上の保存状況は未調査。</li>
+        <li><strong>購入申込規約の本文</strong>（違約金500万円・競業避止5年）― 報道のみで、規約本文の一次資料は未確認。</li>
+        <li><strong>受講生数・成功率の算出根拠</strong> ― 数値自体は複数媒体に残るが、根拠資料は未確認。</li>
+        <li><strong>講座内でのFX等の投資助言の具体例</strong> ― 一次資料は未確認（論点6）。</li>
+      </ol>
+
+      <h2 id="windows"><span class="no">5</span>窓口一覧（連絡先の詳細）</h2>
+      <p class="lead">すべて各機関の公式サイトで確認した情報です（確認日：2026年11月9日）。多くの窓口では、情報提供者への調査経過・結果の回答は行われない旨が公式に明記されています。</p>
+
+      <h3>証券取引等監視委員会（SESC）情報提供窓口</h3>
+      <ul>
+        <li>担当：事務局 市場分析審査課 情報処理係</li>
+        <li>電話：0570-00-3581（IP電話等からは 03-3581-9909）。平日10:00～16:00、それ以外は留守番電話。通話は録音されます</li>
+        <li>インターネット：<a href="https://www.fsa.go.jp/sesc/watch/" target="_blank" rel="noopener">https://www.fsa.go.jp/sesc/watch/</a> 内のリンクから情報提供フォームへ（フォーム単体のURLは未確認）／提供情報の例：<a href="https://www.fsa.go.jp/sesc/watch/example.html" target="_blank" rel="noopener">https://www.fsa.go.jp/sesc/watch/example.html</a></li>
+        <li>郵送：〒100-8922 東京都千代田区霞が関3-2-1 中央合同庁舎第7号館 証券取引等監視委員会事務局 市場分析審査課 情報処理係（書類は返却されないため写しを送付）</li>
+        <li>FAX：03-3506-6699（高齢者・障がい者専用）</li>
+        <li>匿名での情報提供も可能。個別トラブルの処理・調査依頼には対応しない旨、調査の有無・経過・結果には回答しない旨が明記されています</li>
+      </ul>
+
+      <h3>金融庁 金融サービス利用者相談室</h3>
+      <ul>
+        <li>一般の電話相談：0570-016811（IP電話からは 03-5251-6811）。平日10:00～17:00</li>
+        <li>詐欺的な投資に関する相談ダイヤル：0570-050588（IP電話からは 03-6206-6066）。電話は平日10:00～17:00、ウェブサイトは24時間受付</li>
+        <li>事前相談：0570-016812（IP電話からは 03-5251-6812）</li>
+        <li>インターネット情報受付窓口：<a href="https://www.fsa.go.jp/opinion/" target="_blank" rel="noopener">https://www.fsa.go.jp/opinion/</a>／無登録業者の注意喚起：<a href="https://www.fsa.go.jp/ordinary/chuui/mutouroku.html" target="_blank" rel="noopener">https://www.fsa.go.jp/ordinary/chuui/mutouroku.html</a></li>
+        <li>個別トラブルについて、あっせん・仲介・調停は行いません</li>
+        <li>（参考）財務局の地域窓口もあります。例：近畿財務局「きんざい金融ホットライン」06-6949-6259（平日9:00～12:00・13:00～17:00）</li>
+      </ul>
+
+      <h3>消費者庁 ― 景品表示法</h3>
+      <ul>
+        <li>景品表示法違反被疑情報提供フォーム：<a href="https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/</a></li>
+        <li>郵送・電話：表示対策課 情報管理担当（〒100-8958 東京都千代田区霞が関3-1-1 中央合同庁舎第4号館7階／03-3507-8800 代表、平日9:30～18:15・12:00～13:00を除く）</li>
+        <li>公正取引委員会の地方事務所等でも情報提供を受け付けています</li>
+        <li>※消費者庁は、システムトラブルにより一部の期間の情報提供が受付できていなかったことを公表し、心当たりがある場合は再度の情報提供を呼びかけています</li>
+      </ul>
+
+      <h3>消費者庁 ― 特定商取引法</h3>
+      <ul>
+        <li>特定商取引法違反被疑情報提供フォーム：<a href="https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/</a></li>
+        <li>申出制度の解説：<a href="https://www.no-trouble.caa.go.jp/offer/" target="_blank" rel="noopener">https://www.no-trouble.caa.go.jp/offer/</a>（正式な申出は申出書様式で提出）</li>
+        <li>この窓口は個別の民事紛争の仲介や相談を受けるものではありません（最寄りの消費生活センターへ）。情報の内容はできるだけ具体的に記入することが求められています</li>
+      </ul>
+
+      <h3>消費者ホットライン「188」／消費生活センター</h3>
+      <ul>
+        <li>局番なし <strong>188</strong>（「いやや」）で、地元の消費生活センター等につながります。公式案内：<a href="https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline</a></li>
+        <li>契約トラブル・返金の個別相談はこちらが入口です。相談情報はPIO-NET（全国消費生活情報ネットワークシステム）に集約され、行政の法執行や注意喚起に活用されます</li>
+        <li>健康被害の申告も、個人からの実務上の経路は消費生活センターへの相談です（消費者庁への重大事故等の通知は行政機関等が行う仕組みのため）</li>
+      </ul>
+
+      <h3>都道府県・保健所（医師法／薬機法）</h3>
+      <ul>
+        <li><strong>医師法関係</strong>：事業所所在地の都道府県 医務主管課、保健所設置自治体・保健所。医療安全支援センターも経路になります</li>
+        <li><strong>薬機法関係</strong>：事業者所在地の都道府県 薬務主管課・保健所が実務の中心。厚生労働省「あやしいヤクブツ連絡ネット」でも情報を受け付けています：<a href="https://www.yakubutsu.mhlw.go.jp/index.html" target="_blank" rel="noopener">https://www.yakubutsu.mhlw.go.jp/index.html</a></li>
+        <li><strong>健康食品・サプリ等による健康被害</strong>：最寄りの保健所へ。医薬品による副作用は PMDA 患者副作用報告の対象になり得ます</li>
+      </ul>
+
+      <h3>消費者安全調査委員会への申出／YouTubeへの報告</h3>
+      <ul>
+        <li>生命・身体被害の原因調査を求める申出：<a href="https://www.caa.go.jp/policies/application/inquiry/inquiry_001/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/application/inquiry/inquiry_001/</a>（申出の全件が調査されるわけではありません）</li>
+        <li>YouTube動画の医療誤情報は、YouTubeの報告機能（医学的に誤った情報に関するポリシー）から報告できます</li>
+      </ul>
+
+      <h2 id="rules"><span class="no">6</span>証拠保全の共通ルール</h2>
+      <p class="lead">情報提供資料を作る際の共通ルールです。相談者から資料を受け取る際のチェックにも使えます。</p>
+      <ol>
+        <li><strong>一次資料を優先する</strong> ― 発言は録音・動画・公式ページの原文を使う。まとめ記事や第三者の要約は端緒の説明には使えても、裏付けとしては弱い。</li>
+        <li><strong>日時・話者・媒体・URLを必ず付ける</strong> ― 行政は「いつの、誰の、どこでの行為か」が特定できない情報を処理しにくい。スクリーンショットにはURLと日付を含める。</li>
+        <li><strong>削除対策</strong> ― ウェブページはウェブアーカイブと画面収録の両方で残す。動画はタイトル・URL・公開日・該当タイムスタンプを併記する。</li>
+        <li><strong>事実と評価を分ける</strong> ― 「○月○日に○○と発言した（資料A）」と「これは○○法に当たると考える」は分けて書く。</li>
+        <li><strong>宛先ごとに論点を絞る</strong> ― 1つの窓口に全法令を詰め込まず、医行為は都道府県医務主管課へ、表示は消費者庁・都道府県へ、投資助言はSESCへ、と行為単位で分ける。</li>
+        <li><strong>過度な期待を持たない</strong> ― 多くの経路で情報提供者への結果通知はないか概要にとどまる。処分・公表の有無で成否を測らず、「記録が行政に残ること」自体を成果として位置づける。</li>
+      </ol>
+
+      <footer class="doc">
+        <p>作成：2026年11月9日／出典の状態は同日時点の確認に基づきます。出典は各項目のリンク先（公式サイト・公式チャンネル・報道各社・各機関の公式ページ）で直接ご確認ください。</p>
+        <p>本資料は公開情報のみで構成し、法令違反の断定を行うものではありません。法令の整理は e-Gov 法令検索および厚生労働省・消費者庁・金融庁・証券取引等監視委員会の公式解説に基づく一般的な整理であり、法律相談・法的助言ではありません。</p>
+      </footer>
+
+    </div>
+
+    <script>
+      (function(){
+        var issues = Array.prototype.slice.call(document.querySelectorAll('#issueList .issue'));
+        var buttons = Array.prototype.slice.call(document.querySelectorAll('.fbtn'));
+        var input = document.getElementById('q');
+        var note = document.getElementById('countNote');
+        var current = 'all';
+        function apply(){
+          var q = (input.value || '').trim();
+          var shown = 0;
+          issues.forEach(function(el){
+            var okP = (current === 'all' || el.getAttribute('data-priority') === current);
+            var okQ = (!q || (el.textContent + ' ' + (el.getAttribute('data-search') || '')).indexOf(q) !== -1);
+            var vis = okP && okQ;
+            el.hidden = !vis;
+            if (vis) shown++;
+          });
+          note.textContent = '論点 ' + shown + ' 件を表示中（全 ' + issues.length + ' 件）';
+        }
+        buttons.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            current = btn.getAttribute('data-filter');
+            buttons.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+            apply();
+          });
+        });
+        input.addEventListener('input', apply);
+        apply();
+
+        document.querySelectorAll('.copy-btn').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var text = btn.getAttribute('data-copy');
+            function done(){
+              var old = btn.textContent;
+              btn.textContent = 'コピーしました';
+              btn.classList.add('done');
+              setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+            } else { fallback(); }
+            function fallback(){
+              var ta = document.createElement('textarea');
+              ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+              document.body.appendChild(ta); ta.select();
+              try { document.execCommand('copy'); done(); } catch(e) {}
+              document.body.removeChild(ta);
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
