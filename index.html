@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>通報者向け案内</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#f4f2ec; --panel:#ffffff; --panel2:#eceae2; --ink:#1d2731; --ink2:#4c5a66;
+        --line:#d8d4c8; --accent:#0e5a56; --accent-ink:#ffffff; --accent-soft:#e2efec;
+        --warn:#a83a24; --warn-soft:#f8e9e4; --gold:#8a6d1f; --gold-soft:#f4ecd4;
+        --shadow:0 1px 3px rgba(29,39,49,.10), 0 8px 24px rgba(29,39,49,.06);
+        --radius:10px;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#10161b; --panel:#1a222a; --panel2:#232e38; --ink:#e9e7e0; --ink2:#a9b4bd;
+          --line:#33404b; --accent:#4fb3ab; --accent-ink:#0b2220; --accent-soft:#173330;
+          --warn:#e08a72; --warn-soft:#3a211b; --gold:#d3b45e; --gold-soft:#332c17;
+          --shadow:0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--ink);
+        font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+        font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+      .wrap{max-width:920px;margin:0 auto;padding:0 18px 72px}
+      h1,h2,h3{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;line-height:1.4;margin:0}
+      h2{font-size:1.35rem;margin:0 0 6px}
+      p{margin:0 0 12px}
+      a{color:var(--accent);word-break:break-all}
+      section{margin-top:40px}
+      .sec-head{border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:16px}
+      .sec-head .no{font-family:"Noto Sans JP",sans-serif;font-weight:900;font-size:.8rem;letter-spacing:.14em;color:var(--accent)}
+      .sec-sub{color:var(--ink2);font-size:.93rem;margin-top:4px}
+
+      header.hero{padding:38px 0 6px}
+      .hero .kicker{font-weight:900;font-size:.82rem;letter-spacing:.16em;color:var(--accent)}
+      .hero h1{font-size:2rem;margin:8px 0 12px}
+      .hero .lead{font-size:1.02rem;color:var(--ink2);max-width:44em}
+      .hero .meta{font-size:.85rem;color:var(--ink2);margin-top:14px}
+
+      .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+      .step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+      .step .n{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:900;
+        width:1.7em;height:1.7em;line-height:1.7em;text-align:center;border-radius:50%;margin-bottom:8px;font-size:.9rem}
+      .step b{display:block;margin-bottom:4px}
+      .step p{font-size:.9rem;color:var(--ink2);margin:0}
+
+      a.bigcta{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;margin-top:14px;
+        background:var(--accent);color:var(--accent-ink);border-radius:var(--radius);
+        padding:18px 20px;text-decoration:none;text-align:center;word-break:normal;
+        box-shadow:0 4px 14px rgba(14,90,86,.35)}
+      a.bigcta:hover{filter:brightness(1.12)}
+      a.bigcta .bigcta-main{font-weight:900;font-size:1.2rem;line-height:1.4}
+      a.bigcta .bigcta-sub{font-size:.86rem;font-weight:500;opacity:.92;line-height:1.5}
+
+      .refbox{background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--radius);padding:18px;margin-top:22px}
+      .refbox b.title{display:block;font-size:1.02rem;margin-bottom:6px}
+      .refbox p{font-size:.93rem;margin-bottom:10px}
+      .urlrow{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+      .urlrow .url{flex:1 1 260px;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+        padding:9px 12px;font-size:.82rem;word-break:break-all;display:flex;align-items:center}
+      button.copy,button.go{appearance:none;border:0;cursor:pointer;border-radius:8px;font-family:inherit;
+        font-weight:700;font-size:.88rem;padding:9px 16px;background:var(--accent);color:var(--accent-ink);white-space:nowrap}
+      button.copy.copied{background:var(--gold)}
+      button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+      /* selector — each item jumps to the matching card on the evidence page */
+      .picker{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+      .picker a{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:500;line-height:1.5;
+        background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:999px;
+        padding:9px 15px;text-decoration:none;word-break:normal}
+      .picker a:hover{border-color:var(--accent);color:var(--accent)}
+      .picker a .arr{font-weight:900;color:var(--accent);flex:none}
+      .picker-note{font-size:.85rem;color:var(--ink2);margin:0}
+
+      .note{background:var(--gold-soft);border-radius:var(--radius);padding:14px 16px;font-size:.92rem}
+      .note b{color:var(--gold);display:block;margin-bottom:2px}
+      .note p{margin:0}
+
+      ul.tight{margin:6px 0 4px;padding-left:1.3em}
+      ul.tight li{margin-bottom:6px;font-size:.95rem}
+      ul.tight li:last-child{margin-bottom:0}
+
+      footer{margin-top:52px;border-top:1px solid var(--line);padding-top:18px;font-size:.85rem;color:var(--ink2)}
+      @media (max-width:640px){
+        .steps{grid-template-columns:1fr}
+        .hero h1{font-size:1.6rem}
+        h2{font-size:1.25rem}
+      }
+      @media (prefers-reduced-motion: reduce){
+        html{scroll-behavior:auto}
+      }
+    </style>
+  </head>
+  <body>
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="kicker">通報者向け案内</div>
+      <h1>通報は、3ステップだけ</h1>
+      <p class="lead">堀大輔氏の睡眠事業（GAHAKU株式会社／旧・一般社団法人日本ショートスリーパー育成協会）について行政へ情報提供したい方へ。受講生や契約者本人でなくても、広告・動画・公開情報を見て「この部分はおかしい」と思ったところから情報提供できます。ここで案内する窓口の大半は、第三者からの情報提供も受け付けています（返金・解約など個別相談だけは、契約者本人からが基本です）。証拠・送り先・文面は、すべて<strong>送付用証拠ページ</strong>の各論点の中にまとめてあります。このページでは流れだけを案内します。</p>
+      <p class="meta">窓口・制度の情報は各機関の公式ページで確認したものです（確認日：2026年11月9日）。このページは法律相談ではありません。違反かどうかを判断するのは行政機関です。</p>
+
+      <div class="steps">
+        <div class="step"><span class="n">1</span><b>論点を選ぶ</b><p>送付用証拠ページで、自分が問題視している部分の論点を1つ選ぶ。</p></div>
+        <div class="step"><span class="n">2</span><b>テンプレートをコピー</b><p>その論点の中に、送り先とコピペ用の文面が入っています。</p></div>
+        <div class="step"><span class="n">3</span><b>送る</b><p>日付など空欄を埋めて、そのまま送信。以上です。</p></div>
+      </div>
+
+      <a class="bigcta" href="https://momoca774.github.io/sleep-program-report-kit/sources.html" target="_blank" rel="noopener">
+        <span class="bigcta-main">送付用証拠ページで論点を選ぶ →</span>
+        <span class="bigcta-sub">論点ごとに、証拠・送り先・文面テンプレートがまとまっています（新しいタブで開きます）</span>
+      </a>
+
+      <div class="refbox">
+        <b class="title">送付用証拠ページはこちら</b>
+        <p>論点ごとに、証拠・出典、送り先の窓口、文面テンプレート、書くときの注意、期待できる効果までを1か所にまとめています。通報文の末尾には、このURLを1行添えるのが基本形です。</p>
+        <div class="urlrow">
+          <span class="url" id="refUrl">https://momoca774.github.io/sleep-program-report-kit/sources.html</span>
+          <button class="copy" type="button" data-copy-target="refUrl">URLをコピー</button>
+          <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html" target="_blank" rel="noopener"><button class="go" type="button">送付用証拠ページを開く</button></a>
+        </div>
+      </div>
+    </header>
+
+    <section id="choose">
+      <div class="sec-head">
+        <div class="no">論点の目安</div>
+        <h2>どの部分を問題視していますか</h2>
+        <p class="sec-sub">問題視している部分を押すと、送付用証拠ページの対応する論点カードの先頭へ移動します（新しいタブで開きます）。自分が被害を受けたかどうかは問いません。そのカードの中に、証拠・送り先・文面テンプレートまでまとめてあります。複数ある場合は、論点ごとに分けて送ってください。</p>
+      </div>
+      <nav class="picker" aria-label="問題視している部分から、送付用証拠ページの論点カードへ">
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-display" target="_blank" rel="noopener">広告の数字・効果のうたい文句がおかしい<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-sales" target="_blank" rel="noopener">勧誘のしかた・契約や解約の扱いがおかしい<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-medical" target="_blank" rel="noopener">医師でない人が、個別に薬や治療の判断をしている<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-melatonin" target="_blank" rel="noopener">未承認の成分（メラトニン等）を勧めている／購入先を紹介している<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-dose" target="_blank" rel="noopener">健康被害・副作用らしい症状の訴えがある<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-fx" target="_blank" rel="noopener">講座の中でFXなど投資の指示・勧誘があった<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#windows" target="_blank" rel="noopener">YouTube動画の内容そのものがおかしい<span class="arr" aria-hidden="true">→</span></a>
+        <a href="https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-cacao" target="_blank" rel="noopener">「廃油でチョコレートが作れる」という発言が気になる（業界団体への情報提供）<span class="arr" aria-hidden="true">→</span></a>
+      </nav>
+      <p class="picker-note">YouTube動画については専用の論点カードがないため、送付用証拠ページの「窓口の連絡先一覧」（YouTubeへの報告の案内を含む）の先頭へ移動します。動画の報告は動画ページの「…」メニューから行えますが、行政への情報提供の代わりにはならないため、内容に応じて上記の論点からも送ってください。なお、廃油チョコレート発言の項目は行政への通報ではなく、チョコレート業界の団体へ発言の存在を知らせる情報提供です（団体に強制力はありません）。</p>
+    </section>
+
+    <section id="keep">
+      <div class="note">
+        <b>証拠を持っている人へ（これだけ）</b>
+        <p>手元にある元データ（動画ファイル、チャットの全文、契約書面など）は、送った後も<strong>消さないでください</strong>。行政から追加提出を求められることがあります。郵送で資料を送るときは、原本ではなく写しを送ってください（各機関とも「書類は返却されません」と案内しています）。</p>
+      </div>
+    </section>
+
+    <section id="before">
+      <div class="sec-head">
+        <div class="no">送る前に</div>
+        <h2>よくある誤解だけ、先に</h2>
+      </div>
+      <ul class="tight">
+        <li><strong>クーリング・オフは原則使えません</strong>：対象の7役務に睡眠・健康講座は含まれず、通信販売にも制度がありません。契約の進め方は188で相談を。</li>
+        <li><strong>講座の効果表示は健康増進法の対象外</strong>：同法は食品の表示だけが対象です。役務の表示は景品表示法（消費者庁）で送ってください。</li>
+        <li><strong>情報提供で返金はされません</strong>：情報提供は調査のきっかけです。返金・解約は188（あっせん）や弁護士へ。</li>
+        <li><strong>証言だけで断定しない</strong>：一次資料で確認できていない件は「○○という指摘がある」と分けて書くこと。詳しい線引きは送付用証拠ページの各論点にあります。</li>
+      </ul>
+    </section>
+
+    <section id="after">
+      <div class="sec-head">
+        <div class="no">送信後</div>
+        <h2>送った後に</h2>
+      </div>
+      <ul class="tight">
+        <li><strong>控えを残す</strong>：送信日時・窓口・送った文面のコピーを手元に。</li>
+        <li><strong>結果連絡は基本的に来ません</strong>：多くの窓口が公式にそう案内しています。連絡がない＝不受理ではありません。</li>
+        <li><strong>新しい資料が出たら追送する</strong>：「○月○日付の情報提供への追加資料」として同じ窓口へ。</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>この案内の窓口情報・制度説明は、消費者庁・金融庁・証券取引等監視委員会・厚生労働省・PMDA・YouTube ヘルプの公式情報をもとに2026年11月9日に確認したものです。送信前に各公式ページで最新の案内を確認してください。</p>
+      <p>証拠・出典・文面テンプレート：<a href="https://momoca774.github.io/sleep-program-report-kit/sources.html" target="_blank" rel="noopener">送付用証拠ページ</a>（通報文にはこのURLを添付してください）</p>
+      <p>このページは一般的な情報提供の手順を整理したもので、法律相談・法的助言ではありません。個別の契約や被害については、消費生活センターや弁護士等の専門家にご相談ください。</p>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    // copy buttons
+    function copyText(text, btn){
+      function done(){
+        var old = btn.textContent;
+        btn.textContent = "コピーしました";
+        btn.classList.add("copied");
+        setTimeout(function(){ btn.textContent = old; btn.classList.remove("copied"); }, 1600);
+      }
+      function fallback(){
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch(e){}
+        document.body.removeChild(ta); done();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+      } else { fallback(); }
+    }
+    var btns = document.querySelectorAll("button.copy");
+    for (var i = 0; i < btns.length; i++){
+      btns[i].addEventListener("click", function(){
+        var id = this.getAttribute("data-copy-target");
+        var el = document.getElementById(id);
+        if (!el) return;
+        var text = (el.tagName === "TEXTAREA" || el.tagName === "INPUT") ? el.value : el.textContent;
+        copyText(text.replace(/\s+$/, ""), this);
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
