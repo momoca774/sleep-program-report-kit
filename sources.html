@@ -105,16 +105,6 @@
       .tpl-head b{font-size:14px}
       .tpl-head .for{font-size:12.5px;color:var(--ink-2);flex:1 1 200px}
       pre.tpl{margin:0;padding:12px 14px;font-family:inherit;font-size:13.5px;line-height:1.65;white-space:pre-wrap;word-break:break-word;background:var(--paper);max-height:340px;overflow:auto}
-      .fld{border-top:1px dashed var(--line);padding:8px 12px 2px}
-      .fld-head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:4px}
-      .fld-head b{font-size:13.5px}
-      .fld-head .req{font-size:11.5px;font-weight:800;color:#b3261e}
-      .fld-head .opt{font-size:11.5px;color:var(--ink-2)}
-      .fld-head .copy-btn{margin-left:auto}
-      .fld pre.tpl{max-height:220px;border:1px solid var(--line-2)}
-      .tpl-box .hint{font-size:12.5px;color:var(--ink-2);margin:6px 12px}
-      .warn-note{padding:8px 12px;font-size:14px;margin:10px 12px 4px;border:1px solid var(--warn);background:var(--paper)}
-      .warn-note b{color:var(--warn)}
       /* ---------- source rows ---------- */
       .src{border-top:1px dashed var(--line);padding:8px 0}
       .src:first-of-type{border-top:none}
@@ -339,81 +329,31 @@ https://momoca774.github.io/sleep-program-report-kit/sources.html#issue-money</p
               <span class="src-url"><a href="https://play.google.com/store/apps/details?id=net.shortsleeper.shortsleeper_mypage_app&hl=ja" target="_blank" rel="noopener">Google Play の掲載ページ</a><button class="copy-btn" type="button" data-copy="https://play.google.com/store/apps/details?id=net.shortsleeper.shortsleeper_mypage_app&hl=ja">URLをコピー</button></span></li>
           </ul>
           <p><small>※現在のGAHAKU公式サイトに成功率・満足度の数値はない（事業内容ページの表現は穏当化されている）。算出根拠は未確認。</small></p>
-          <h4>送り先・送り方</h4>
+          <h4 id="issue-display-send">送り先・送り方</h4>
           <p>消費者庁「景品表示法違反被疑情報提供フォーム」（表示対策課）へオンラインで送る。郵送・電話も可（<a href="#windows">連絡先一覧</a>）。<br />
           <span class="src-url"><a href="https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/</a><button class="copy-btn" type="button" data-copy="https://www.caa.go.jp/policies/policy/representation/contact/disobey_form/">URLをコピー</button></span></p>
           <h4>文面テンプレート</h4>
-                    <div class="tpl-box">
-            <div class="tpl-head"><b>景品表示法フォーム用（欄ごと）</b><span class="for">消費者庁フォームは欄が分かれているため、全文を1か所には貼れません。下の欄ごとにコピーして、フォームの対応する欄へ貼ってください</span></div>
-            <div class="warn-note"><b>作業の前に（注意喚起）：</b>フォームは<b>別タブで開き、このページと並べて</b>作業してください。フォームには入力途中の保存がなく、画面を離れたりブラウザの「戻る」を押したりすると、入力した内容が消えることがあります。このページにまとめてあるのは、出元の分からない画像や感情的な訴えではなく、公式ページ・本人の動画など<b>出元が確認できる一次情報</b>をもとにした、<b>確度の高い証拠</b>です。数字はすべて半角で入力し、特殊文字は使わないでください（フォーム側の注意書きどおりです）。</div>
-            <div class="fld">
-              <div class="fld-head"><b>会社名又は名称</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy="GAHAKU株式会社">コピー</button></div>
-              <pre class="tpl">GAHAKU株式会社</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>ふりがな</b><span class="opt">任意</span><button class="copy-btn" type="button" data-copy="がはくかぶしきがいしゃ">コピー</button></div>
-              <pre class="tpl">がはくかぶしきがいしゃ</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>ホームページ</b><span class="opt">任意</span><button class="copy-btn" type="button" data-copy="https://gahaku.co.jp/">コピー</button></div>
-              <pre class="tpl">https://gahaku.co.jp/</pre>
-            </div>
-            <p class="hint">所在地・電話番号は任意項目です。公式の会社概要などで確認できた場合だけ入力してください（確認できない場合は空欄で構いません）。「報告者（あなた自身）について」の欄は、自分の情報を自分で入力してください（すべて任意）。「報告者の属性」は自分の立場に合うものを、「連絡の可否」「他の行政機関等への情報提供の可否」は自分の希望で選んでください。</p>
-            <p class="hint"><b>情報提供の種類の選択（必須）</b>では「<b>不当表示</b>」を選んでください。選ぶと、下の欄が表示されます（以下はすべて必須です）。</p>
-            <div class="fld">
-              <div class="fld-head"><b>表示媒体</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-media">コピー</button></div>
-              <pre class="tpl" id="tplA-media">ウェブサイト、動画・生配信、新聞・出版社の著者プロフィール</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>URL</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy="https://gahaku.co.jp/">コピー</button></div>
-              <pre class="tpl">https://gahaku.co.jp/</pre>
-              <p class="hint">URL欄には代表の1件だけ貼れます。他の出典URLは、下の「実際のものを裏付ける根拠」欄にまとめてあります。</p>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>表示時期</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-period">コピー</button></div>
-              <pre class="tpl" id="tplA-period">2023年8月時点の著者プロフィールから現在まで（本人の動画2026年11月15日・配信2026年11月17日を含む）</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>表示された場所</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-place">コピー</button></div>
-              <pre class="tpl" id="tplA-place">公式サイト、PRESIDENT Online・ZUU online・フォレスト出版の著者ページ、東京スポーツのプロフィール欄、YouTubeの本人チャンネル</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>表示の対象となった商品又はサービス</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-target">コピー</button></div>
-              <pre class="tpl" id="tplA-target">ショートスリーパー育成講座（現・睡眠改善プログラムほか、GAHAKU株式会社の有料講座）</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>その表示内容</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-content">コピー</button></div>
-              <pre class="tpl" id="tplA-content">公式サイトの代表プロフィールに「2,000名を超える受講生のライフスタイル改善・短眠化を支援」との記載があります。
-PRESIDENT Onlineの著者ページには「受講生は2200人以上、満足度98.2%、睡眠の質改善率92.7%（2023年8月時点調べ）」との記載があります。
-ZUU onlineの著者ページには「受講生は1,000人以上、成功率は99%を超える」との記載があります。
-フォレスト出版の著者ページには「受講生は1000人を超える」との記載があります。
-東京スポーツ（2026年11月8日）のプロフィール欄には「2000人以上の受講生に短眠メソッドを指導」との記載があります。
-本人の動画（2026年11月15日公開）では、受講生について「3000人ぐらい」と発言しています（00:10:22付近）。
-本人の配信（2026年11月17日）でも「2000人どころか3000人ぐらいいますかね」と発言しています（00:23:51付近）。
-公式アプリ「Nature sleep」の説明文には「唯一無二のショートスリーパー養成プログラム」との記載があります。</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>表示から受けた印象</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-impression">コピー</button></div>
-              <pre class="tpl" id="tplA-impression">受講生が数千人規模いて、成功率や満足度が9割を超える、実績の裏付けが十分な講座であるという印象を受けます。あわせて、誰でも短時間睡眠を習得できるかのような印象も受けます。</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>実際にはどうか</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-reality">コピー</button></div>
-              <pre class="tpl" id="tplA-reality">媒体・時期によって受講生数（1,000人、2,000人、2,200人、3,000人）と率の数値が異なっており、どの数字が実際のものか分かりません。各数値の算出根拠（定義・集計期間・集計方法）は公表されていません。なお、現在の公式サイトには成功率・満足度の数値の掲載はありません。</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>実際のものを裏付ける根拠</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplA-basis">コピー</button></div>
-              <pre class="tpl" id="tplA-basis">複数の出典をまとめたリンク：https://momoca774.github.io/sleep-program-report-kit/sources.html
-各表示の出典は次のとおりです。
-公式サイト：https://gahaku.co.jp/
-PRESIDENT Online著者ページ：https://president.jp/list/author/堀 大輔
-ZUU online著者ページ：https://zuuonline.com/authors/daisuke_hori
-フォレスト出版著者ページ：https://www.forestpub.co.jp/author/hori/
-東京スポーツ記事：https://www.tokyo-sports.co.jp/articles/-/409165
-本人の動画（2026年11月15日公開、00:10:22付近）：https://www.youtube.com/watch?v=2lPmbetHGoI&amp;t=622s
-本人の配信（2026年11月17日、00:23:51付近）：https://www.youtube.com/watch?v=m2VxVHs70os&amp;t=1431s
-表示画面のスクリーンショット（URLと取得日が写るもの）を添付します。</pre>
-            </div>
-            <p class="hint"><b>添付ファイル：</b>表示のスクリーンショットを添付してください（3ファイルまで、1ファイル50MB未満、合計100MBまで）。ファイル名にスペースや記号を使うと受信できないことがあるので、英数字とハイフンだけの名前にしてください（例：gahaku-top-20261119.png）。数が多い場合はZipファイルにまとめてください。</p>
+          <div class="tpl-box">
+            <div class="tpl-head"><b>景品表示法フォーム用</b><span class="for">フォームの本文欄へ貼る</span><button class="copy-btn big" type="button" data-copy-target="tplA">テンプレートをコピー</button></div>
+            <pre class="tpl" id="tplA">GAHAKU株式会社の受講生数・成功率等に関する表示について
+
+事業者名：GAHAKU株式会社（代表取締役：堀 大輔）
+対象の表示と出典：
+・公式サイトの代表プロフィールに「2,000名を超える受講生」との記載があります。
+　出典：https://gahaku.co.jp/ （確認日：）
+・出版社等の著者プロフィールでは、時期・媒体により異なる数値が使われています。
+　例：「受講生は2,200人以上、満足度98.2%、睡眠の質改善率92.7%（2023年8月時点調べ）」
+　　　「受講生は1,000人以上、成功率は99%を超える」
+・本人の動画（2026年11月15日公開）では、受講生について「3000人ぐらい」と発言しています（[00:10:22]付近）。
+　出典：https://www.youtube.com/watch?v=2lPmbetHGoI&t=622s
+・本人の配信（2026年11月17日）でも「2000人どころか3000人ぐらいいますかね」と、同規模の数字を繰り返しています（[00:23:51]付近）。
+　出典：https://www.youtube.com/watch?v=m2VxVHs70os&t=1431s
+気づいた点：
+媒体・時期によって受講生数（1,000人／2,000人／2,200人／3,000人）と率の数値が異なり、各数値の算出根拠（定義・集計期間・集計方法）は公表されていません。景品表示法第5条第1号（優良誤認表示）の疑いがあると考え、情報提供いたします。表示の裏付けとなる合理的な根拠の有無について、ご確認をお願いいたします。
+添付・参照資料：
+・表示のスクリーンショット（取得日：、別途提出可）
+詳細な出典・日付・証拠としての評価は、送付用証拠ページに整理しています：
+https://momoca774.github.io/sleep-program-report-kit/sources.html</pre>
           </div>
           <h4>書くときの注意</h4>
           <ul>
@@ -675,38 +615,23 @@ https://momoca774.github.io/sleep-program-report-kit/sources.html
           <p>販売方法の情報提供は消費者庁「特定商取引法違反被疑情報提供フォーム」へ。<strong>自分の返金・解約の相談は別手続き</strong>で、消費者ホットライン <strong>188</strong> → 消費生活センターへ。<br />
           <span class="src-url"><a href="https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/" target="_blank" rel="noopener">https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/</a><button class="copy-btn" type="button" data-copy="https://www.caa.go.jp/policies/policy/consumer_transaction/specified_commercial_transactions/disobey_form/">URLをコピー</button></span></p>
           <h4>文面テンプレート</h4>
-                    <div class="tpl-box">
-            <div class="tpl-head"><b>特商法フォーム用（欄ごと）</b><span class="for">消費者庁フォームは欄が分かれているため、全文を1か所には貼れません。下の欄ごとにコピーして、フォームの対応する欄へ貼ってください</span></div>
-            <div class="warn-note"><b>作業の前に（注意喚起）：</b>フォームは<b>別タブで開き、このページと並べて</b>作業してください。フォームには入力途中の保存がなく、画面を離れたりブラウザの「戻る」を押したりすると、入力した内容が消えることがあります。このページにまとめてあるのは、出元の分からない画像や感情的な訴えではなく、公式ページなど<b>出元が確認できる一次情報</b>をもとにした、<b>確度の高い証拠</b>です。数字はすべて半角で入力し、特殊文字は使わないでください（フォーム側の注意書きどおりです）。なお、このフォームでは<b>報告者（あなた自身）の氏名・住所・メールアドレス・電話番号も必須</b>です（景品表示法フォームと違います）。</div>
-            <div class="fld">
-              <div class="fld-head"><b>会社名又は名称</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy="GAHAKU株式会社">コピー</button></div>
-              <pre class="tpl">GAHAKU株式会社</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>ふりがな</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy="がはくかぶしきがいしゃ">コピー</button></div>
-              <pre class="tpl">がはくかぶしきがいしゃ</pre>
-            </div>
-            <div class="fld">
-              <div class="fld-head"><b>ホームページ</b><span class="opt">任意</span><button class="copy-btn" type="button" data-copy="https://gahaku.co.jp/">コピー</button></div>
-              <pre class="tpl">https://gahaku.co.jp/</pre>
-            </div>
-            <p class="hint">所在地・電話番号は任意項目です。同社の特商法表記ページには所在地・電話番号の表示がありません（それ自体が下の「事実関係」の指摘事項です）。公式の会社概要などで確認できた場合だけ入力してください。</p>
-            <p class="hint"><b>取引類型（必須）</b>は、勧誘から契約までの経緯で決まります。通信販売の表示の問題として送る場合は「<b>通信販売</b>」にチェックしてください（複数選択できます）。</p>
-            <div class="fld">
-              <div class="fld-head"><b>取扱商品若しくは権利又は役務名</b><span class="req">必須</span><button class="copy-btn" type="button" data-copy-target="tplB-target">コピー</button></div>
-              <pre class="tpl" id="tplB-target">ショートスリーパー育成講座（現・睡眠改善プログラムほか、GAHAKU株式会社の有料講座）</pre>
-            </div>
-            <p class="hint"><b>申込・契約の有無（必須）</b>は、自分が申し込み・契約をした場合は「有」、表示についての情報提供だけの場合は「無」を選んでください。その他の任意欄（契約商品等数量・販売価格・勧誘日・勧誘場所・申込・契約日・申込・契約場所・申込・契約書面の有無・クーリング・オフの有無）は、自分の経緯に合わせて入力してください（なければ空欄で構いません）。</p>
-            <div class="fld">
-              <div class="fld-head"><b>事実関係</b><span class="req">必須・1,200文字以内</span><button class="copy-btn" type="button" data-copy-target="tplB-facts">コピー</button></div>
-              <pre class="tpl" id="tplB-facts">GAHAKU株式会社の通信販売の表示・契約条件について情報提供します。
-同社の特定商取引法に基づく表記ページ（https://gahaku.co.jp/tokusho/）では、所在地・電話番号について「請求があった場合に遅滞なく開示いたします」とされ、ページ上に住所・電話番号の表示がありません。返金については「原則として決済完了後の返金には応じかねます」と記載されています。
+          <div class="tpl-box">
+            <div class="tpl-head"><b>特商法フォーム用</b><span class="for">フォームの本文欄へ貼る</span><button class="copy-btn big" type="button" data-copy-target="tplB">テンプレートをコピー</button></div>
+            <pre class="tpl" id="tplB">GAHAKU株式会社の通信販売の表示・契約条件について
+
+事業者名：GAHAKU株式会社（代表責任者：堀 大輔、連絡先：info@gahaku.co.jp）
+事実：
+・同社の特定商取引法に基づく表記ページでは、所在地・電話番号について「請求があった場合に遅滞なく開示いたします」とされ、ページ上に住所・電話番号の表示がありません。
+　出典：https://gahaku.co.jp/tokusho/ （確認日：）
+・返金については「原則として決済完了後の返金には応じかねます」と記載されています。
+・私自身の契約経緯は次のとおりです。（勧誘から契約までの経緯を時系列で）
+気づいた点：
 通信販売の広告表示義務（特定商取引法第11条）および誇大広告の禁止（第12条）との関係で確認が必要と考え、情報提供いたします。
-私自身の契約経緯は次のとおりです。（ここに、勧誘から契約までの経緯を時系列で書いてください。契約していない場合は、その旨を書いてください。）
-複数の出典をまとめたリンク：https://momoca774.github.io/sleep-program-report-kit/sources.html
-特商法表記ページのスクリーンショット（取得日：　）を添付します。</pre>
-            </div>
-            <p class="hint"><b>添付ファイル：</b>特商法表記ページや申込画面のスクリーンショット、契約書面などを添付してください（3ファイルまで、1ファイル50MB未満、合計100MBまで）。ファイル名は半角英数字だけにしてください（スペースや記号を使うと受信できません）。4ファイル以上ある場合はZipファイルにまとめてください。</p>
+添付・参照資料：
+・特商法表記ページおよび申込画面のスクリーンショット（取得日：）
+・契約書面・規約・決済記録（該当する場合）
+詳細な出典・日付・証拠としての評価は、送付用証拠ページに整理しています：
+https://momoca774.github.io/sleep-program-report-kit/sources.html</pre>
           </div>
           <h4>書くときの注意</h4>
           <ul>
